@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="Utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Webpage</title>
+    <style>
+        #cat {
+            width: 680px;
+            height: 480px;
+        }
+        #popButton {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <img id="cat" src="https://i.imgur.com/Zm6U28B.jpeg">
+    <audio id="audio1" src="pop1.wav"></audio>
+    <audio id="audio2" src="pop2.wav"></audio>
+    
+    <button id="popButton">Pop</button>
+    
+    <script type="text/javascript">
+        var state = false;
+
+        function toggleCat() {
+            if (state == false) {
+                cat.src = "https://i.imgur.com/nTG6nhz.jpeg";
+                document.getElementById('audio1').play();
+                document.getElementById('popButton').style.backgroundColor = "red";
+                state = true;
+            } else {
+                cat.src = "https://i.imgur.com/Zm6U28B.jpeg";
+                document.getElementById('audio2').play();
+                document.getElementById('popButton').style.backgroundColor = "blue";
+                state = false;
+            }
+        }
+
+        cat.onclick = toggleCat;
+        document.getElementById('popButton').onclick = toggleCat;
+    </script>
+</body>
+</html>
